@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+
+:root {
+  /* Backgrounds */
+ 
+  --bg-page: #0B0B0E;
+  --bg-card: #17171C;
+  --bg-input: #0F0F13;
+  --bg-avatar: #26262E;
+
+  /* Borders / dividers */
+  --border-card: #26262E;
+  --border-row: #1E1E24;
+  --border-balance-card: #2A3A0F;
+
+  /* Accent */
+  --accent: #B9FF3C;
+  --accent-text-muted: #9AAE6E;
+
+  /* Status */
+  --danger: #FF5C7C;
+  --danger-bg: #241014;
+  --success-bg: #1B2408;
+
+  /* Text */
+  --text-primary: #F2F2F5;
+  --text-secondary: #7A7A85;
+
+  /* Gradients */
+  --balance-card-gradient: linear-gradient(135deg, #1B2408, #0F0F13);
+
+  /* Radius */
+  --radius-card: 16px;
+  --radius-element: 8px;
+  --radius-badge: 6px;
+
+  /* Spacing */
+  --card-padding: 1.4rem;
+  --stat-padding: 0.85rem;
+  --grid-gap: 12px;
+
+  /* Sizing */
+  --input-height: 38px;
+  --button-height: 42px;
+  --avatar-size: 32px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--bg-page);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   font-family: 'Inter', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
 }
