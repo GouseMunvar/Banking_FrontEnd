@@ -1,11 +1,31 @@
 import React from 'react'
 import './input.css'
 
-const Input = ({value,text}) => {
+const Input = ({
+  value,
+  text,
+  name,
+  placeholder,
+  type = "text",
+  onChange
+}) => {
+
   return (
     <div className="inputDiv">
-        <label className='label' htmlFor="">{text}</label>
-        <input className='input' value={value}></input>
+
+      <label className="label">
+        {text}
+      </label>
+
+      <input
+        className="input"
+        name={name}
+        value={value}
+        placeholder={placeholder}
+        type={type}
+        onChange={onChange}
+      />
+
     </div>
   )
 }
