@@ -68,3 +68,57 @@ export const logoutUser = () => {
   localStorage.removeItem("user");
 
 };
+
+
+export const getBalance = async () => {
+  try {
+    const response = await API.get("/account/balance");
+
+    return response.data;
+
+  } catch (error) {
+    console.log(error);
+
+    throw error.response?.data || {
+      message: "Unable to fetch balance"
+    };
+  }
+};
+
+
+
+export const depositAmount = async (amount) => {
+  try {
+    const response = await API.post("/account/deposit", {
+      amount,
+    });
+
+    return response.data;
+
+  } catch (error) {
+    console.log(error);
+
+    throw error.response?.data || {
+      message: "Deposit failed"
+    };
+  }
+};
+
+
+export const withdrawAmount = async (amount) => {
+  try {
+    const response = await API.post("/account/withdraw", {
+      amount,
+    });
+
+    return response.data;
+
+  } catch (error) {
+    console.log(error);
+
+    throw error.response?.data || {
+      message: "Withdrawal failed"
+    };
+  }
+};
+
