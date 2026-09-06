@@ -1,9 +1,8 @@
 .transactionList {
-   height: 200px;
-  overflow: auto;
- 
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
-
 .transaction {
   display: flex;
   align-items: center;
@@ -98,12 +97,12 @@
 
 
 /* Large desktops */
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .transactionList {
     height: 20vh;
     overflow-y: auto;
   }
-}
+} */
 
 /* Laptops */
 @media (max-width: 1199px) {

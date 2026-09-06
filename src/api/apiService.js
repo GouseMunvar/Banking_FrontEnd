@@ -122,3 +122,19 @@ export const withdrawAmount = async (amount) => {
   }
 };
 
+
+// Get Transactions
+export const getTransactions = async () => {
+  try {
+    const response = await API.get("/account/transaction");
+
+    return response.data;
+
+  } catch (error) {
+    console.log(error);
+
+    throw error.response?.data || {
+      message: "Unable to fetch transactions",
+    };
+  }
+};

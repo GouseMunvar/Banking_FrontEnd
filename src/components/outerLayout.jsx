@@ -18,6 +18,7 @@ import {
   depositAmount,
   withdrawAmount
 } from "../api/apiService";
+import { useStateContext } from "./context/StateContext";
 
 
 const OuterLayout = () => {
@@ -28,6 +29,7 @@ const OuterLayout = () => {
   const [showWithdraw, setShowWithdraw] = useState(false);
 
   const [amount, setAmount] = useState("");
+  const { transactions, loading } = useStateContext();
 
 
 
@@ -63,6 +65,8 @@ const OuterLayout = () => {
 
   },[]);
 
+  
+   
 
 
   const handleDeposit = async()=>{
@@ -287,7 +291,7 @@ const OuterLayout = () => {
                 }}
               >
 
-                <TransactionList />
+                <TransactionList  transactions={transactions} />
 
               </div>
 
