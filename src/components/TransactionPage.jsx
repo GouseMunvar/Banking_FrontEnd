@@ -13,6 +13,7 @@ import TransactionList from "./TransactionList";
 import "./TransactionPage.css";
 
 import { useStateContext } from "./context/StateContext";
+import MenuList from "./MenuList";
 
 
 const TransactionPage = () => {
@@ -23,20 +24,7 @@ const TransactionPage = () => {
   const { transactions, loading } = useStateContext();
 
 
-  const menuList = [
-    {
-      icon: <IconLayoutDashboard size={20} />,
-      text: "Dashboard"
-    },
-    {
-      icon: <IconList size={20} />,
-      text: "Transactions"
-    },
-    {
-      icon: <IconUser size={20} />,
-      text: "My Profile"
-    },
-  ];
+  
 
 
   const filteredTransactions = transactions
@@ -65,36 +53,7 @@ const TransactionPage = () => {
 
           <Header />
 
-          <div className="menuList">
-
-            {
-              menuList.map((item, index) => (
-
-                <div
-                  className={`sideList ${
-                    item.text === "Transactions"
-                      ? "active"
-                      : ""
-                  }`}
-                  key={index}
-                >
-
-                  <span className="menuIcon">
-                    {item.icon}
-                  </span>
-
-
-                  <span className="menuText">
-                    {item.text}
-                  </span>
-
-
-                </div>
-
-              ))
-            }
-
-          </div>
+         <MenuList/>
 
         </div>
 

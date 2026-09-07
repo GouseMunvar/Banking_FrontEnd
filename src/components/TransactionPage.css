@@ -33,58 +33,12 @@
 }
 
 
-.menuList {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-
-.sideList {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 16px;
-  border-radius: 8px;
-  color: var(--text-secondary);
-  transition: 0.3s ease;
-}
-
-
-.sideList:hover {
-  background: var(--balance-card-gradient);
-  color: var(--accent);
-  cursor: pointer;
-}
-
-
-.sideList.active {
-  background: var(--balance-card-gradient);
-  color: var(--accent);
-}
-
-
-.menuIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.menuText {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-
 /* ================= Main Panel ================= */
 
 .mainPanel {
   flex: 3;
   padding: 20px;
   background: var(--bg-page);
-
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -95,9 +49,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-
   color: var(--text-secondary);
-
   height: 100%;
   flex: 1;
   min-height: 0;
@@ -105,511 +57,303 @@
 
 
 .innerContainer {
-
   background-color: var(--bg-card);
-
   padding: 38px;
-
   border: 1px solid var(--border-card);
-
   border-radius: 16px;
-
   display: flex;
   flex-direction: column;
-
   gap: 20px;
-
   flex: 1;
   min-height: 0;
 }
-
 
 
 /* ================= Page Title ================= */
 
 .pageTitle {
-
   color: var(--text-primary);
-
   font-size: 30px;
-
   font-weight: 600;
-
   margin-bottom: 25px;
-
 }
-
 
 
 /* ================= Logo ================= */
 
 .walletHeader {
-
   margin-bottom: 35px;
-
 }
-
 
 
 /* ================= Balance Card ================= */
 
 .balanceCard {
-
   width: 100%;
-
   padding: 24px;
-
   border-radius: 16px;
-
   background: var(--balance-card-gradient);
-
   border: 1px solid var(--border-balance-card);
-
   display: flex;
-
   flex-direction: column;
-
   gap: 12px;
-
 }
 
 
 .balanceTitle {
-
   color: var(--accent-text-muted);
-
   font-size: 14px;
-
   margin-bottom: 12px;
-
 }
 
 
 .balanceCard h1 {
-
   color: var(--text-primary);
-
   font-size: 36px;
-
   font-weight: 600;
-
 }
 
 
 .balanceCard p {
-
   margin-top: 18px;
-
   color: var(--text-primary);
-
   font-size: 14px;
-
 }
-
 
 
 /* ================= Buttons ================= */
 
 .buttonDiv {
-
   display: flex;
-
   gap: 20px;
-
 }
-
 
 
 /* ================= Transactions ================= */
 
-
 .transactionList {
-
   flex: 1;
-
   min-height: 0;
-
   overflow-y: auto;
-
   overflow-x: hidden;
-
 }
-
 
 
 .transaction {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   padding: 15px 0;
-
   border-bottom: 1px solid var(--border-row);
-
 }
-
 
 
 .transaction:last-child {
-
   border-bottom: none;
-
 }
-
 
 
 .transactionLeft {
-
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
 }
-
 
 
 .transactionIcon {
-
   height: 40px;
-
   width: 40px;
-
   border-radius: 50%;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   flex-shrink: 0;
-
 }
-
 
 
 .transactionIcon svg {
-
   width: 18px;
-
   height: 18px;
-
 }
-
 
 
 .transactionIcon.deposit {
-
   background: var(--success-bg);
-
   color: var(--accent);
-
 }
-
 
 
 .transactionIcon.withdraw {
-
   background: var(--danger-bg);
-
   color: var(--danger);
-
 }
-
 
 
 .transactionTypeAndDate h3 {
-
   margin: 0;
-
   font-size: 14px;
-
   font-weight: 500;
-
   color: var(--text-primary);
-
 }
-
 
 
 .transactionTypeAndDate p {
-
   margin: 4px 0 0;
-
   font-size: 12px;
-
   color: var(--text-secondary);
-
 }
-
 
 
 .amount {
-
   margin: 0;
-
   font-size: 14px;
-
   font-weight: 600;
-
 }
-
 
 
 .amount.deposit {
-
   color: var(--accent);
-
 }
-
 
 
 .amount.withdraw {
-
   color: var(--danger);
-
 }
-
 
 
 /* ================= Header ================= */
 
-
 .transactionHeader,
-
 .headerDiv {
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
 }
-
 
 
 .userName {
-
   width: 42px;
-
   height: 42px;
-
   border-radius: 50%;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   background-color: var(--bg-avatar);
-
 }
-
 
 
 /* ================= Filters ================= */
 
-
 .filterRow {
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   gap: 10px;
-
   margin-bottom: 10px;
-
 }
-
 
 
 .filterChips {
-
   display: flex;
-
   gap: 8px;
-
 }
-
 
 
 .filterChip {
-
   font-size: 12px;
-
   background: var(--bg-card);
-
   border: 1px solid var(--border-card);
-
   color: var(--text-secondary);
-
   padding: 7px 16px;
-
   border-radius: 8px;
-
   cursor: pointer;
-
   transition: 0.2s ease;
-
 }
-
 
 
 .filterChip:hover {
-
   color: var(--text-primary);
-
 }
-
 
 
 .filterChip.active {
-
   background: var(--accent);
-
   border-color: var(--accent);
-
   color: var(--bg-page);
-
   font-weight: 500;
-
 }
-
 
 
 /* ================= Search ================= */
 
-
 .searchBox {
-
   display: flex;
-
   align-items: center;
-
   gap: 8px;
-
   background: var(--bg-card);
-
   border: 1px solid var(--border-card);
-
   border-radius: 8px;
-
   padding: 0 12px;
-
   height: 34px;
-
   color: var(--text-secondary);
-
 }
-
 
 
 .searchBox input {
-
   background: transparent;
-
   border: none;
-
   outline: none;
-
   color: var(--text-primary);
-
   font-size: 12px;
-
   width: 160px;
-
 }
-
 
 
 .searchBox input::placeholder {
-
   color: var(--text-secondary);
-
 }
-
 
 
 /* ================= Scrollbar ================= */
 
-
 .transactionList::-webkit-scrollbar {
-
   width: 6px;
-
 }
-
 
 
 .transactionList::-webkit-scrollbar-thumb {
-
   background: var(--accent);
-
   border-radius: 10px;
-
 }
-
 
 
 .transactionList::-webkit-scrollbar-track {
-
   background: transparent;
-
 }
-
 
 
 /* ================= Filter Button ================= */
 
-
 .filterBtn {
-
   padding: 8px 16px;
-
   border-radius: 8px;
-
   border: 1px solid var(--border-card);
-
   background: var(--bg-page);
-
   color: var(--text-secondary);
-
   font-size: 13px;
-
   cursor: pointer;
-
   transition: 0.2s ease;
-
 }
-
 
 
 .filterBtn:hover {
-
   color: var(--text-primary);
-
 }
 
 
-
 .filterBtn.active {
-
   background: var(--accent);
-
   color: var(--bg-page);
-
   border-color: var(--accent);
-
   font-weight: 500;
-
 }

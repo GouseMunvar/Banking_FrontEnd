@@ -7,6 +7,7 @@ const StateContext = createContext();
 export const StateProvider = ({ children }) => {
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [index,setIndex]=useState(0)
 
  const fetchTransactions = async () => {
   try {
@@ -78,6 +79,8 @@ export const StateProvider = ({ children }) => {
         setTransactions,
         fetchTransactions,
         loading,
+        index,
+        setIndex
       }}
     >
       {children}

@@ -12,6 +12,7 @@ import {
 import Button from "./Button";
 import TransactionList from "./TransactionList";
 import Modal from "./Modal";
+import MenuList from "./MenuList";
 
 import {
   getBalance,
@@ -32,16 +33,7 @@ const OuterLayout = () => {
   const { transactions, loading } = useStateContext();
 
 
-
-  const menuList = [
-    { icon: <IconLayoutDashboard size={20} />, text: "Dashboard" },
-    { icon: <IconList size={20} />, text: "Transactions" },
-    { icon: <IconUser size={20} />, text: "My Profile" },
-  ];
-
-
-
-  const fetchBalance = async () => {
+ const fetchBalance = async () => {
 
     try {
 
@@ -131,29 +123,7 @@ const OuterLayout = () => {
           <Header />
 
 
-          <div className="menuList">
-
-            {
-              menuList.map((item,index)=>(
-
-                <div className="sideList" key={index}>
-
-                  <span className="menuIcon">
-                    {item.icon}
-                  </span>
-
-
-                  <span className="menuText">
-                    {item.text}
-                  </span>
-
-                </div>
-
-              ))
-            }
-
-
-          </div>
+          <MenuList/>
 
 
         </div>
@@ -208,12 +178,7 @@ const OuterLayout = () => {
 
               </div>
 
-
-
-
-
-
-              <div className="buttonDiv">
+<div className="buttonDiv">
 
 
                 <Button

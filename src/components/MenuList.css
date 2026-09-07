@@ -1,0 +1,43 @@
+/* ================= Sidebar Menu ================= */
+
+.menuList {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  list-style: none;
+  padding: 0;
+}
+
+.sideList {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.sideList:hover {
+  background: var(--balance-card-gradient);
+  color: var(--accent);
+}
+
+.sideList.active {
+  background: var(--balance-card-gradient);
+  color: var(--accent);
+}
+
+.menuIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuText {
+  font-size: 15px;
+  font-weight: 500;
+}

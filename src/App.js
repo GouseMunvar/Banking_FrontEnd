@@ -5,8 +5,13 @@ import Register from './pages/register';
 import { Route,BrowserRouter as Router,Routes } from 'react-router-dom';
 import OuterLayout from './components/outerLayout';
 import TransactionPage from './components/TransactionPage';
+import { useEffect } from 'react';
+import { useStateContext } from './components/context/StateContext';
+
+
 
 function App() {
+
   return (
     <Router>
     <div className="App">

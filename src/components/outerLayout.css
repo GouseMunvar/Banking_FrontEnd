@@ -36,22 +36,6 @@
   gap: 8px;
 }
 
-.sideList {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 16px;
-  border-radius: 8px;
-  color: var(--text-secondary);
-  transition: 0.3s ease;
-}
-
-.sideList:hover {
-  background: var(--balance-card-gradient);
-  color: var(--accent);
-  cursor: pointer;
-}
-
 .menuIcon {
   display: flex;
   align-items: center;
