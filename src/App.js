@@ -7,6 +7,7 @@ import OuterLayout from './components/outerLayout';
 import TransactionPage from './components/TransactionPage';
 import { useEffect } from 'react';
 import { useStateContext } from './components/context/StateContext';
+import ProfilePage from './components/Profilepage';
 
 
 
@@ -20,6 +21,7 @@ function App() {
          <Route path='/register' element={<Register/>}/>
          <Route path='/' element={<OuterLayout/>}/>
          <Route path="/transaction" element={<TransactionPage/>}/>
+         <Route path="/profile" element={<ProfilePage/>}/>
       </Routes>
       </div>
     </Router>
