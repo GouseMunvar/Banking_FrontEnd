@@ -138,3 +138,21 @@ export const getTransactions = async () => {
     };
   }
 };
+
+// Get Profile
+export const getProfile = async () => {
+  try {
+
+    const response = await API.get("/auth/profile");
+
+    return response.data;
+
+  } catch (error) {
+
+    console.log(error);
+
+    throw error.response?.data || {
+      message: "Unable to fetch profile"
+    };
+  }
+};

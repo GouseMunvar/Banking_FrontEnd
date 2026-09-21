@@ -1,111 +1,185 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./outerLayout.css";
 import "./ProfilePage.css";
 import Header from "./header";
-import {
-  IconLayoutDashboard,
-  IconList,
-  IconUser,
-} from "@tabler/icons-react";
 import MenuList from "./MenuList";
+import { getProfile } from "../api/apiService";
+import { useStateContext } from "./context/StateContext";
 
 const ProfilePage = () => {
-  const menuList = [
-    { icon: <IconLayoutDashboard size={20} />, text: "Dashboard" },
-    { icon: <IconList size={20} />, text: "Transactions" },
-    { icon: <IconUser size={20} />, text: "My Profile" },
-  ];
 
-  const user = {
-    name: "Jordan Lee",
-    email: "jordan@email.com",
-    initials: "JL",
-    status: "Active",
-    balance: "$4,820.50",
-    totalTransactions: 37,
-    userId: "#00214",
-    memberSince: "Jan 14, 2025",
-    lastLogin: "Aug 29, 2026, 9:42 PM",
-  };
+  const { profile, setProfile } = useStateContext();
+
+
+  useEffect(() => {
+
+    const fetchProfile = async () => {
+      try {
+
+        const response = await getProfile();
+
+        setProfile(response.profile);
+
+      } catch (error) {
+
+        console.log("Profile error:", error);
+
+      }
+    };
+
+
+    fetchProfile();
+
+  }, [setProfile]);
+
+
+  if (!profile) {
+    return <h3>Loading profile...</h3>;
+  }
+
 
   return (
     <div className="outerDiv">
       <div className="mainCard">
-        {/* Sidebar */}
+
         <div className="sidePanel">
           <Header />
-          {/* <div className="menuList">
-            {menuList.map((item, index) => (
-              <div
-                className={`sideList ${item.text === "My Profile" ? "active" : ""}`}
-                key={index}
-              >
-                <span className="menuIcon">{item.icon}</span>
-                <span className="menuText">{item.text}</span>
-              </div>
-            ))}
-          </div> */}
-          <MenuList/>
+          <MenuList />
         </div>
 
-        {/* Main Content */}
+
         <div className="mainPanel">
+
           <div className="Container">
+
             <h3>My Profile</h3>
+
 
             <div className="innerContainer">
 
               <div className="profileHeader">
-                <div className="profileAvatar">{user.initials}</div>
-                <div className="profileNameEmail">
-                  <p className="profileName">{user.name}</p>
-                  <p className="profileEmail">{user.email}</p>
+
+                <div className="profileAvatar">
+                  {profile.name
+                    ?.split(" ")
+                    .map(word => word[0])
+                    .join("")
+                  }
                 </div>
-                <span className="statusBadge">{user.status}</span>
+
+
+                <div className="profileNameEmail">
+
+                  <p className="profileName">
+                    {profile.name}
+                  </p>
+
+                  <p className="profileEmail">
+                    {profile.email}
+                  </p>
+
+                </div>
+
+
+                <span className="statusBadge">
+                  {profile.status}
+                </span>
+
               </div>
+
+
 
               <div className="profileStats">
+
                 <div className="statCard balanceStat">
-                  <p className="statLabel">Wallet balance</p>
-                  <p className="statValue">{user.balance}</p>
+                  <p className="statLabel">
+                    Wallet balance
+                  </p>
+
+                  <p className="statValue">
+                    ₹{profile.balance}
+                  </p>
                 </div>
+
+
                 <div className="statCard">
-                  <p className="statLabel">Total transactions</p>
-                  <p className="statValue">{user.totalTransactions}</p>
+
+                  <p className="statLabel">
+                    Total transactions
+                  </p>
+
+                  <p className="statValue">
+                    {profile.totalTransactions}
+                  </p>
+
                 </div>
+
               </div>
+
+
+
 
               <div className="profileDetails">
+
                 <div className="detailRow">
                   <span>Full name</span>
-                  <span>{user.name}</span>
+                  <span>{profile.name}</span>
                 </div>
+
+
                 <div className="detailRow">
                   <span>Email</span>
-                  <span>{user.email}</span>
+                  <span>{profile.email}</span>
                 </div>
+
+
                 <div className="detailRow">
                   <span>User ID</span>
-                  <span>{user.userId}</span>
+                  <span>{profile.accountNumber}</span>
                 </div>
+
+
                 <div className="detailRow">
                   <span>Member since</span>
-                  <span>{user.memberSince}</span>
+                  <span>
+                    {new Date(profile.memberSince).toLocaleDateString()}
+                  </span>
                 </div>
+
+
                 <div className="detailRow lastRow">
+
                   <span>Last login</span>
-                  <span>{user.lastLogin}</span>
+
+                  <span>
+                    {new Date(profile.lastLogin).toLocaleString()}
+                  </span>
+
                 </div>
+
+
               </div>
+
 
               <div className="profileActions">
-                <button className="primaryBtn">Edit profile</button>
-                <button className="secondaryBtn">Change password</button>
+
+                <button className="primaryBtn">
+                  Edit profile
+                </button>
+
+                <button className="secondaryBtn">
+                  Change password
+                </button>
+
               </div>
 
+
             </div>
+
           </div>
+
         </div>
+
       </div>
     </div>
   );
