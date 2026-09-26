@@ -21,6 +21,7 @@ export const registerUser = async (userData) => {
 
 
 
+
 // Login API
 export const loginUser = async (loginData) => {
   try {
@@ -153,6 +154,25 @@ export const getProfile = async () => {
 
     throw error.response?.data || {
       message: "Unable to fetch profile"
+    };
+  }
+};
+
+
+export const updatePassword = async (passwordData) => {
+  try {
+    const response = await API.put(
+      "/auth/update-password",
+      passwordData
+    );
+
+    return response.data;
+
+  } catch (error) {
+    console.log(error);
+
+    throw error.response?.data || {
+      message: "Unable to update password"
     };
   }
 };

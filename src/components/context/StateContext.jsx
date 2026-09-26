@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { getTransactions } from "../../api/apiService";
 import { IconArrowDownLeft, IconArrowUpRight } from "@tabler/icons-react";
+import { updatePassword } from './../../api/apiService';
 
 const StateContext = createContext();
 
@@ -9,6 +10,8 @@ export const StateProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [index,setIndex]=useState(0)
   const [profile,setProfile]=useState({})
+  const [updatePasswordCredentials,setUpdatePasswordCredentials]=useState({currrentpassword:"",newpassword:"",cnfpassword:""})
+  const [updatePassword,setUpdatePassword]=useState(false)
 
  const fetchTransactions = async () => {
   try {
@@ -83,7 +86,11 @@ export const StateProvider = ({ children }) => {
         index,
         setIndex,
         profile,
-        setProfile
+        setProfile,
+        updatePasswordCredentials,
+        setUpdatePasswordCredentials,
+        updatePassword,
+        setUpdatePassword
       }}
     >
       {children}
